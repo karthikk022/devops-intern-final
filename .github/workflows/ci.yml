@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  run-hello:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,3 +19,6 @@ jobs:
 
       - name: Run hello.py
         run: python hello.py
+
+      - name: Run sysinfo.sh (no execute bit needed on Windows)
+        run: bash scripts/sysinfo.sh
